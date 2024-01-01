@@ -100,3 +100,25 @@ def sequence4(args, &b)
 end
 
 sequence4(n: 5, m: 2, c: 2) {|x| print x, " "}; puts
+
+
+
+m = 0.method(:succ)
+puts m.call
+puts m.name
+puts m.owner
+puts m.receiver
+
+
+
+def square(x); x*x; end
+print (1..10).map(&method(:square)), "\n"
+
+
+
+unbound_plus = Integer.instance_method("+")
+plus_2 = unbound_plus.bind(2)
+puts plus_2.call(4)
+plus_3 = plus_2.unbind.bind(3)
+puts plus_3.call(4)
+puts "Name is #{plus_3.name}, owner is #{plus_3.owner}"
