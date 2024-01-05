@@ -22,23 +22,26 @@ end
 #  undef x=, y=, []=
 #end
 
-p = Point.new(1, 2)
+if __FILE__ == $0
+  p = Point.new(1, 2)
 
-puts "p.x is #{p.x}, p.y is #{p.y}"
+  puts "p.x is #{p.x}, p.y is #{p.y}"
 
-p.x = 3
-puts "p.x is #{p.x}, p.y is #{p.y}"
+  p.x = 3
+  puts "p.x is #{p.x}, p.y is #{p.y}"
 
-p[:x] = 4
-puts "p.x is #{p[:x]}, p.y is #{p[1]}"
+  p[:x] = 4
+  puts "p.x is #{p[:x]}, p.y is #{p[1]}"
 
-p.each {|c| print c}; puts
-p.each_pair {|n, c| print n, c }; puts
+  p.each {|c| print c}; puts
+  p.each_pair {|n, c| print n, c }; puts
 
-q = Point.new(4, 2)
-puts "p == q is #{p == q}"
+  q = Point.new(4, 2)
+  puts "p == q is #{p == q}"
 
-h = {q => 1}
-puts h[p]
+  h = {q => 1}
+  puts h[p]
 
-puts q.to_s
+  puts q.to_s
+
+end
