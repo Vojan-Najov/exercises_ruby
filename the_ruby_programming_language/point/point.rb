@@ -27,6 +27,9 @@ class Point
     attr_accessor :n, :totalX, :totalY
 
     def new(x, y)
+      @n = 0 if @n.nil?
+      @totalX = 0 if @totalX.nil?
+      @totalY = 0 if @totalY.nil?
       @n += 1
       @totalX += x
       @totalY += y
