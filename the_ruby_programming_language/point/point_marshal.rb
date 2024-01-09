@@ -25,3 +25,12 @@ p2 = Point.new(0, 0, 0)
 p2.marshal_load(s)
 puts p2
 
+puts
+
+p1 = Point.new(1, 2, 3, 4)
+puts p1
+s = Marshal.dump(p1)
+p2 = Marshal.load(s)
+puts p2
+puts "p1.id = #{p1.object_id}, p2 = #{p2.object_id}"
+
