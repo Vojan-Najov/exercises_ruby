@@ -20,6 +20,14 @@ class Season
 
   private :dup, :clone
 
+  def _dump(limit)
+    @n.to_s
+  end
+
+  def self._load(s)
+    INSTANCES[Integer(s)]
+  end
+
 end
 
 puts Season::INSTANCES
